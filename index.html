@@ -1,0 +1,11 @@
+<body style=\"background-color: RGB(100, 100, 100);color: RGB(100, 200, 100);\">"
+  <div id="info"></div>
+     <script>
+        document.getElementById("info").innerHTML = new Date();
+        let timerId = setTimeout(function tick(){
+            location.reload();
+            timerId = setTimeout(tick, 1000);
+        }, 1000); 
+    </script>
+</body>
+  
