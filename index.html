@@ -1,10 +1,12 @@
 <body style="background-color: RGB(0, 0, 0);color: RGB(100, 100, 100);">
-  <div id="info"></div>
-     <script>
+    <center>
+      <div id="info"></div>
+    </center>
+    <script>
         document.getElementById("info").innerHTML = new Date();
         let timerId = setTimeout(function tick(){
             location.reload();
-            timerId = setTimeout(tick, 1000);
-        }, 1000); 
+            timerId = setTimeout(tick, 2000);
+        }, 2000); 
     </script>
 </body>  
