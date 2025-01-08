@@ -56,7 +56,7 @@ function PanoImageController() {
 <script>
 
     // https://raw.githubusercontent.com/MyasnikovIA/WebSputnik/main/Pano360Vr/pic_20240606_153923.jpg
-    PanoramaA = pannellum.viewer('panoramaA', {"type": "equirectangular","panorama": "pic_20240606_153923.jpg","autoLoad": true,"orientationOnByDefault":true,"yaw":0,"showControls":false});
+    PanoramaA = pannellum.viewer('panoramaA', {"type": "equirectangular","panorama": "WhatsApp Image 2025-01-08 at 10.33.35.jpeg","autoLoad": true,"orientationOnByDefault":true,"yaw":0,"showControls":false});
 	//PanoramaA = pannellum.viewer('panoramaA', {"type": "equirectangular","panorama": "Church_HDR_x4_000.jpg","autoLoad": true,"orientationOnByDefault":true,"yaw":0,"showControls":false});
 </script>
 
