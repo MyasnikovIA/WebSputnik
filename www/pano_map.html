@@ -72,6 +72,8 @@
   var isOpenSelectHotSpot=false;
   var sceneMain=null;
   var selectGridRowHotSpot={};
+  var jsonPanoObjStarter ;
+
 
 
 function getRandomInt(max) {
@@ -238,26 +240,25 @@ $('#tt').datagrid({
   let params = new URLSearchParams(document.location.search);
   let value = params.get('info');
 
-    var jsonPanoObj ;
     if (!value) {
-        jsonPanoObj = getJsonUrlData('/Example/pano360/point_info/default.json');
+        jsonPanoObjStarter = getJsonUrlData('/Example/pano360/point_info/default.json');
     } else {
-        jsonPanoObj = getJsonUrlData('/Example/pano360/point_info/'+value);
+        jsonPanoObjStarter = getJsonUrlData('/Example/pano360/point_info/'+value);
     }
-    jsonPanoObj.onDblClick = onDblClickScene;
-    jsonPanoObj.onClickHotSpot = onClickHotSpot;
+    jsonPanoObjStarter.onDblClick = onDblClickScene;
+    jsonPanoObjStarter.onClickHotSpot = onClickHotSpot;
     //sceneSelectPoint
-    sceneMain = pannellum.viewer('canvasPoint', jsonPanoObj);
-    if (!jsonPanoObj['lon']) {
-        jsonPanoObj['lon'] = 98.29704566996978;
+    sceneMain = pannellum.viewer('canvasPoint', jsonPanoObjStarter);
+    if (!jsonPanoObjStarter['lon']) {
+        jsonPanoObjStarter['lon'] = 98.29704566996978;
     }
-    if (!jsonPanoObj['lat']) {
-        jsonPanoObj['lat'] = 7.8278988917053285;
+    if (!jsonPanoObjStarter['lat']) {
+        jsonPanoObjStarter['lat'] = 7.8278988917053285;
     }
     if (scene_osm == null) {
           scene_osm = osm.viewer('canvasMapPoint');
-          scene_osm.addMarker('test',jsonPanoObj['lon'],jsonPanoObj['lat'],{'default':true});
-          scene_osm.setCenter(jsonPanoObj['lon'],jsonPanoObj['lat']);
+          scene_osm.addMarker('test',jsonPanoObjStarter['lon'],jsonPanoObjStarter['lat'],{'default':true});
+          scene_osm.setCenter(jsonPanoObjStarter['lon'],jsonPanoObjStarter['lat']);
           scene_osm.onClickMarker(function(marker) {
               console.log(marker)
           });
